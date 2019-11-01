@@ -107,11 +107,6 @@ export default {
                     v-show="index >= currentPage * pageSize && index < (currentPage + 1) * pageSize"
                     :item="item"
                 />
-                <ul v-for="tag in item.frontmatter.tags" class="blog-list__tags">
-                    <li>
-                        <button @click="addTag(tag)">{{ tag }}</button>
-                    </li>
-                </ul>
             </li>
         </ul>
 
