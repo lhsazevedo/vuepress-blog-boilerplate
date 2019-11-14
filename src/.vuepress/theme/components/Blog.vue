@@ -1,28 +1,23 @@
 <template>
-	<div class="theme-default-content">  
+	<div class="blog-container">  
     <div 
       v-if="selectedTags.length > 0"
       class="filtered-heading"
     >
-      <h2>Filtered by {{ selectedTags.join(',') }}</h2>
+      <span>Filtered by {{ selectedTags.join(',') }}</span>
       <button
         type="button"
         @click="resetTags"
-        class="btn clear-filter-btn"
+        class="btn btn-light"
       >
         Clear filter
       </button>
     </div>
-    <ul class="blog-list">
-      <li v-for="(item, index) in filteredList"
-        class="blog-list__item">
-        <PostPreview v-on:add-tag="addTag($event)"
-          v-show="index >= currentPage * pageSize && index < (currentPage + 1) * pageSize"
-          :item="item"
-          v-on:tag-click="console.log($event)"
-        />
-      </li>
-    </ul>
+    <PostPreview v-for="(item, index) in filteredList" v-on:add-tag="addTag($event)"
+      v-show="index >= currentPage * pageSize && index < (currentPage + 1) * pageSize"
+      :item="item"
+      v-on:tag-click="console.log($event)"
+    />
 
     <div class="pagination">
       <div>
@@ -135,31 +130,31 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-.blog-list
-    padding 0
-    margin 0
+// .blog-list
+//     padding 0
+//     margin 0
 
-.blog-list__item
-    list-style-type none
+// .blog-list__item
+//     list-style-type none
 
-.blog-list__tags
-    margin-bottom 15px
+// .blog-list__tags
+//     margin-bottom 15px
 
-.button--pagination
-    text-decoration none
-    color lighten($textColor, 25%)
-    &:hover
-        text-decoration none !important
-        border-bottom 2px solid $accentColor
+// .button--pagination
+//     text-decoration none
+//     color lighten($textColor, 25%)
+//     &:hover
+//         text-decoration none !important
+//         border-bottom 2px solid $accentColor
 
-.clear-filter-btn
-    align-self center
-    margin-left 20px
+// .clear-filter-btn
+//     align-self center
+//     margin-left 20px
 
-.filtered-heading
-    display flex
+// .filtered-heading
+//     display flex
 
-.pagination
-    display flex
-    justify-content space-between
+// .pagination
+//     display flex
+//     justify-content space-between
 </style>

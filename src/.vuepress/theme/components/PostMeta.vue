@@ -1,5 +1,5 @@
 <template>
-  <span class="meta">
+  <span class="post-preview-meta">
     <time datetime="$page.lastUpdated"></time> {{ content() }}
   </span>
 </template>
@@ -51,7 +51,7 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-.meta
-  color #aaa
-  font-size .9rem
+// .meta
+//   color #aaa
+//   font-size .9rem
 </style>

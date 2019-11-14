@@ -1,0 +1,13 @@
+.header-anchor {
+    opacity: 0;
+    transition: opacity .5s ease;
+    margin-left: -.9em;
+
+    &:hover {
+        opacity: 1;
+    }
+}
+
+.header-anchor, .header-anchor:hover {
+    text-decoration: none;
+}
