@@ -1,8 +1,8 @@
 <template>
-  <ul class="list">
-      <li class="list-item" v-for="tag in tags">
+  <ul class="is-flex">
+      <li class="" v-for="tag in tags">
         <a href="#" @click="$emit('tag-click', tag)">
-          <span class="tag tag-accent">{{ tag }}</span>                
+          <span class="tag is-light m">{{ tag }}</span>                
         </a>
       </li>
     </ul>
@@ -14,27 +14,8 @@ export default {
 }
 </script>
 
-<style lang="stylus" scoped>
-.list
-  display flex
-  list-style none
-  margin 0
-  padding 0
-
-.list-item
-  margin-right 4px
-
-.tag
-  display inline-block
-  margin-right 0.8em
-  font-size .75rem
-  font-weight 700
-  line-height 1
-  text-align center
-  white-space nowrap
-  vertical-align baseline
-  border-radius .25rem
-
-.tag-accent  
-  color #42b983
+<style lang="scss" scoped>
+    .m {
+        margin-right: 1em;
+    }
 </style>

@@ -7,7 +7,6 @@
 <script>
 import { formatPublishDate } from '../util'
 import moment from 'moment'
-
 export default {
   props: {
     post: Object,
@@ -49,9 +48,3 @@ export default {
   }
 }
 </script>
-
-<style lang="stylus" scoped>
-.meta
-  color #aaa
-  font-size .9rem
-</style>

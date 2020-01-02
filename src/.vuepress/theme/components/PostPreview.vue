@@ -3,9 +3,9 @@
     <TagList :tags="item.frontmatter.tags" v-on:tag-click="$emit('add-tag', $event)" />
     <router-link class="link" :to="item.path">
       <header class="header">
-        <h2 class="title">{{ item.frontmatter.title }}</h2>
+        <h2 class="title is-size-2">{{ item.frontmatter.title }}</h2>
       </header>
-      <section v-if="item.frontmatter.excerpt" class="excerpt">
+      <section v-if="item.frontmatter.excerpt" class="subtitle is-size-5">
         <p>{{ item.frontmatter.excerpt }}</p>
       </section>
     </router-link>
@@ -18,7 +18,6 @@
 <script>
 import TagList from './TagList'
 import PostMeta from './PostMeta'
-
 export default {
   name: 'PostPreview',
   components: { TagList, PostMeta },
@@ -34,16 +33,10 @@ export default {
 <style lang="stylus" scoped>
 .post-preview
   margin 60px 0
-
 .link, .link:hover
   display block
   text-decoration none !important
   color unset
-  
-.title
-  font-size 2.2rem
-  margin 0 0 0.4em
-  padding-bottom unset
 
 .excerpt
   font-weight 400
